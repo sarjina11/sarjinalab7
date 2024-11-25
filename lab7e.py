@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-# Student ID: S
+# Student ID: skarki28
 
 class Time:
     """Simple object type for time of the day."""
@@ -10,8 +10,16 @@ class Time:
         self.minute = minute
         self.second = second
 
+    def __str__(self):
+        """Return a human-readable string for the Time object."""
+        return f'{self.hour:02d}:{self.minute:02d}:{self.second:02d}'
+
+    def __repr__(self):
+        """Return a machine-readable string for the Time object."""
+        return f'{self.hour:02d}.{self.minute:02d}.{self.second:02d}'
+
     def format_time(self):
-        """Return time object as a formatted string"""
+        """Return time object as a formatted string."""
         return f'{self.hour:02d}:{self.minute:02d}:{self.second:02d}'
 
     def sum_times(self, t2):
@@ -45,3 +53,4 @@ def sec_to_time(seconds):
     minutes, time.second = divmod(seconds, 60)
     time.hour, time.minute = divmod(minutes, 60)
     return time
+
